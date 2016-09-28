@@ -32,8 +32,8 @@
 		}
 		#scoreboard {
 			width: 800px;
-			height: 100px;
-			background-color: grey;
+			height: 40px;
+			background-color: #202020;
 		}
 		#scoreLeft {
 			display: hide;
@@ -46,22 +46,24 @@
 			display: hide;
 			width: 20px;
 			height: 40px;
-			margin-top: 10px;
+			margin-top: -40px;
+			margin-left: 780px;
 			background-color: blue;
 		}
 
 	</style>
 </head>
 <body>
+	<div id="scoreboard">
+		<div id="scoreLeft">0</div>
+		<div id="scoreRight">0</div>
+	</div>
 	<div id="game">
 		<div id="left_paddle"></div>
 		<div id="right_paddle"></div>
 		<div id="ball"></div>
 	</div>
-	<div id="scoreboard">
-		<div id="scoreLeft">0</div>
-		<div id="scoreRight">0</div>
-	</div>
+
 
 	<script>
 
@@ -149,9 +151,8 @@
 		}
 
 		function followBall() {
-				right_paddle_y = ball_y - 25;
-		}
-
+				if(Math.random() < .8 ) {right_paddle_y = ball_y - 25;}
+		} //I wanted my else statement to mess with the computer paddle 20% of the time but isn't currently working.
 
 		function score() {
 			if (ball_x <= 0) {
